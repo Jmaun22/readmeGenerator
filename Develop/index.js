@@ -14,6 +14,10 @@ const questions = [
     name: 'name',
   },
   {type: 'input',
+  message: 'What is the title of the project',
+  name: 'title',
+},
+  {type: 'input',
     message: 'What is your gitHub username?',
     name: 'githubusername',
   },
@@ -52,6 +56,9 @@ name: 'tests',
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
+ 
+
+
 
 }
 
@@ -59,16 +66,60 @@ function writeToFile(fileName, data) {
 function generateMarkdown(data) {
     return `# ${data.title}
 
-    
+    ## Table of Contents
+      
+
+    ## Description
+
+    ## intallation instructions
+
+    ## usage information
+
+    ## contribution guidelines
+
+    ## test instructions
+
+    ## Questions
+
+    ## License
+
+   
+
   
   `;
   }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+  console.log(questions);
+
+
+  inquirer
+  .prompt(questions)
+
+  .then((data) => {
+
+    readMe = generateMarkdown(data);
+
+    fs.writeFile('README.md', readMe, (err) =>
+    // TODO: Describe how this ternary operator works
+    err ? console.error(err) : console.log('Commit logged!')
+  );
+  
+  }).catch((err) => {
+      if (err) throw err
+  });
+
+
+}
 
 // Function call to initialize app
 init();
+
+
+
+   
 
 module.exports = { questions };
 
