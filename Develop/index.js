@@ -67,17 +67,25 @@ function generateMarkdown(data) {
     return `# ${data.title}
 
     ## Table of Contents
-      
+  - [Description](#description)
+  - [intallation instructions](#intallation)
+  - [usage information](#usage)
+  - [contribution guidelines](#contribution)
+  - [test instructions](#test)
+  - [Questions](#Questions)
+  - [License](#License)
+
+
 
     ## Description
 
-    ## intallation instructions
+    ## intallation 
 
-    ## usage information
+    ## usage 
 
-    ## contribution guidelines
+    ## contribution
 
-    ## test instructions
+    ## test 
 
     ## Questions
 
