@@ -10,7 +10,7 @@ console.log( genmarkdown.renderLicenseBadge('MIT'))
 // TODO: Create an array of questions for user input
 const questions = [
     {type: 'input',
-    message: 'What is your user name?',
+    message: 'What is your name?',
     name: 'name',
   },
   {type: 'input',
@@ -73,6 +73,8 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
     return `# ${data.title}
+  
+  ${genmarkdown.renderLicenseBadge(data.license)}
 
     ## Table of Contents
   - [Description](#description)
@@ -89,7 +91,7 @@ function generateMarkdown(data) {
     ${data.description}
 
     ## intallation 
-    ${installation}
+    ${data.installation}
 
 
     ## usage 
@@ -110,16 +112,22 @@ function generateMarkdown(data) {
 
 
 
-    [Email:](${data.email});
-    [${data.githubusername}:](${data.githublink});
+    [${data.email}:](${data.email});
+
+    Git Hub:
+    [${data.githubusername}:](${data.githublink})
 
     ${data.contact}
 
     ## License
+    ${data.license}
+  
+    
+    ${genmarkdown.renderLicenseSection(data.license) }
 
-    ${genmarkdown.renderLicenseSection('${data.license}') }
-    ${genmarkdown.renderLicenseLink('${data.license}')}
-    ${genmarkdown.renderLicenseBadge('${data.license}')}
+
+    ${genmarkdown.renderLicenseLink(data.license)}
+    ${genmarkdown.renderLicenseBadge(data.license)}
 
    
 
@@ -130,7 +138,6 @@ function generateMarkdown(data) {
 // TODO: Create a function to initialize app
 function init() {
 
-  console.log(questions);
 
 
   inquirer
