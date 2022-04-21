@@ -50,6 +50,14 @@ name: 'usage',
 message: 'Explaing what tests you would run here',
 name: 'tests',
 },
+{type: 'input',
+message: 'Contribution instructions',
+name: 'contribution',
+},
+{type: 'input',
+message: 'Instructions of how to get in contact with me',
+name: 'contact',
+},
 
 ];
 
@@ -78,18 +86,40 @@ function generateMarkdown(data) {
 
 
     ## Description
+    ${data.description}
 
     ## intallation 
+    ${installation}
+
 
     ## usage 
 
+    ${data.usage}
+
     ## contribution
+
+    ${data.contribution}
 
     ## test 
 
+    ${data.tests}
+
     ## Questions
 
+    Contact Me At:
+
+
+
+    [Email:](${data.email});
+    [${data.githubusername}:](${data.githublink});
+
+    ${data.contact}
+
     ## License
+
+    ${genmarkdown.renderLicenseSection('${data.license}') }
+    ${genmarkdown.renderLicenseLink('${data.license}')}
+    ${genmarkdown.renderLicenseBadge('${data.license}')}
 
    
 
