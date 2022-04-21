@@ -123,7 +123,7 @@ function generateMarkdown(data) {
     ${data.license}
   
     
-    ${genmarkdown.renderLicenseSection(data.license) }
+    ${genmarkdown.renderLicenseSection(data.license, data.name) }
 
 
     ${genmarkdown.renderLicenseLink(data.license)}

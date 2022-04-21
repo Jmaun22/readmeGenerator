@@ -49,12 +49,12 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(license, name) {
 
   if (license == 'MIT') {
     return `MIT License
 
-    Copyright (c) [year] [fullname]
+    Copyright (c) [2022] [${name}]
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -74,7 +74,7 @@ function renderLicenseSection(license) {
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.`;
   } else if (license == 'APACHE 2.0') {
-    return `Copyright [yyyy] [name of copyright owner]
+    return `Copyright [2022] [${name}]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
